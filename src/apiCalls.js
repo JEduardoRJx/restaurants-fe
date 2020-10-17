@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const baseUrl = "https://code-challenge.spectrumtoolbox.com/api/restaurants";
 const headers = {
   headers: {
@@ -6,10 +8,10 @@ const headers = {
 }
 
 export const getRestaurants = async () => {
-  const res = await fetch(baseUrl, headers);
-  if (!res.ok) {
+  const res = await axios.get(baseUrl, headers);
+  if (res.statusText !== 'OK') {
     throw Error ("Restaurants are closed, can't fetch restaurants");
   }
-  const restaurants = await res.json();
+  const restaurants = res.data;
   return restaurants;
 }
