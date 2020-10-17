@@ -1,8 +1,9 @@
-import React, { Component, useState} from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import { getRestaurants } from './apiCalls';
 
-export class App extends Component {
+export const App = () => {
+  const [allRestaurants, setAllRestaurants] = useState([]);
 
   async componentDidMount() {
     try {
