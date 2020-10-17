@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import './App.scss';
 import { getRestaurants } from './apiCalls';
+
 
 export const App = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
 
-  async componentDidMount() {
-    try {
-      const restaurants = await getRestaurants();
-      console.log('ayyyyo', restaurants)
-    } catch {
-      console.log("can't fetch restaurants")
-    }
-  }
+  useEffect( () => {
+    getRestaurants()
+      .then(data => setAllRestaurants(data))
+  }, []);
 
-  render() {
     return (
       <main>
-        Hello
+        hello
+        {console.log(allRestaurants.length)}
+        <ul>
+          {allRestaurants.map (rest => (<li key={rest.id}>{rest.name}</li>))}
+        </ul>
       </main>
     )
-  }
 }
 
 export default App;
