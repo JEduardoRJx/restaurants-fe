@@ -1,15 +1,21 @@
-import React, { Component, useState} from 'react';
+import React, { useState , useEffect} from 'react';
 import './App.scss';
+import { getRestaurants } from './apiCalls';
 
-export class App extends Component {
 
-  render() {
+export const App = () => {
+  const [allRestaurants, setAllRestaurants] = useState([]);
+
+  useEffect( () => {
+    getRestaurants()
+      .then(data => setAllRestaurants(data))
+  }, []);
+
     return (
       <main>
-        Hello
+        hello
       </main>
     )
-  }
 }
 
 export default App;
