@@ -12,6 +12,14 @@ export const getRestaurants = async () => {
   if (res.statusText !== 'OK') {
     throw Error ("Restaurants are closed, can't fetch restaurants");
   }
-  const restaurants = res.data;
+  const restaurants = res.data.sort((a,b) => {
+    if (a.name < b.name) {
+      return -1;
+    } else if (a.name > b.name) {
+      return 1;
+    } else {
+      return 0
+    }
+  })
   return restaurants;
 }
