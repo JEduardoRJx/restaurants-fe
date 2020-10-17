@@ -14,10 +14,6 @@ export const App = () => {
     return (
       <main>
         hello
-        {console.log(allRestaurants.length)}
-        <ul>
-          {allRestaurants.map (rest => (<li key={rest.id}>{rest.name}</li>))}
-        </ul>
       </main>
     )
 }
