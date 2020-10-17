@@ -1,5 +1,5 @@
 import React, { Component, useState} from 'react';
-import './App.scss';
+import '';
 
 export class App extends Component {
 
