@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 
-export const Filters = () => {
+export const Filters = ({ allRestaurants }) => {
+
+  const renderStates = (allRestaurants) => {
+    const allStates = allRestaurants.map(rest => rest.state);
+    const uniqueStates = [...new Set(allStates)];
+    return uniqueStates.map(state => <option key={state} value={state}>{state}</option> )
+  }
 
   return (
     <section className="section has-background-success">
@@ -11,7 +17,8 @@ export const Filters = () => {
           <p>State</p>
           <div className="select">
             <select>
-              <option>All</option>
+              <option value="All" defaultValue>All</option>
+              {renderStates(allRestaurants)}
             </select>
           </div>
         </div>
@@ -21,6 +28,7 @@ export const Filters = () => {
           <div className="select">
             <select>
               <option>All</option>
+              {renderGenres(allRestaurants)}
             </select>
           </div>
         </div>
