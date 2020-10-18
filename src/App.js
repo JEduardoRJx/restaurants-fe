@@ -9,6 +9,7 @@ import { Search } from './Search';
 
 export const App = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([])
 
   useEffect( () => {
   //   getRestaurants()
@@ -17,10 +18,11 @@ export const App = () => {
 
   }, []);
 
+
     return (
       <main className="container is-widescreen">
-        {/* {console.log(allRestaurants)} */}
-        <Search restaurants={allRestaurants} />
+        {console.log(filteredRestaurants)}
+        <Search restaurants={allRestaurants} setFilteredRestaurants={setFilteredRestaurants} />
         <TableSection restaurants={allRestaurants} />
       </main>
     )
