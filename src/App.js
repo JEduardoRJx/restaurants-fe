@@ -3,6 +3,7 @@ import './App.scss';
 import { getRestaurants } from './apiCalls';
 import { TableSection }  from './TableSection';
 import { restaurants } from './restaurants';
+import { Search } from './Search';
 
 
 
