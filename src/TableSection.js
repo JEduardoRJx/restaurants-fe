@@ -1,11 +1,11 @@
 import React from 'react';
 import { TableItem } from './TableItem';
-import { restaurants } from './restaurants';
+// import { restaurants } from './restaurants';
 
-export const TableSection = () => {
+export const TableSection = ({ restaurants }) => {
   
   const renderRestaurants = (restaurants) => {
-      return restaurants.map(rest => <TableItem  rest={rest} />)
+      return restaurants.map(rest => <TableItem key={rest.id} rest={rest} />)
   }
   
   
