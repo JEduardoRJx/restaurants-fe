@@ -1,6 +1,5 @@
 import React from 'react';
 import { TableItem } from './TableItem';
-// import { restaurants } from './restaurants';
 
 export const TableSection = ({ restaurants, filteredRestaurants }) => {
   
