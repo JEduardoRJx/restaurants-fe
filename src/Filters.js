@@ -15,7 +15,22 @@ export const Filters = ({ allRestaurants }) => {
     return uniqueGenres.map(genre => <option key={genre} value={genre}>{genre}</option> )
   }
 
-  const filterByState = () => {
+  const filterByState = (e) => {
+    console.log(e.target.value);
+    const state = e.target.value;
+    const filteredRestaurantsByState = allRestaurants.filter(rest => rest.state === state)
+    console.log(filteredRestaurantsByState);
+
+  }
+
+  const filterByGenre = (e) => {
+    console.log(e.target.value);
+    const genre = e.target.value;
+    const filteredRestaurantsByState = allRestaurants.filter(rest => rest.genre.includes(genre))
+    console.log(filteredRestaurantsByState);
+  }
+
+  const combineFilters = () => {
 
   }
 
@@ -27,7 +42,7 @@ export const Filters = ({ allRestaurants }) => {
         <div className="container">
           <p>State</p>
           <div className="select">
-            <select>
+            <select onChange={(e) => filterByState(e)}>
               <option value="All" defaultValue>All</option>
               {renderStates(allRestaurants)}
             </select>
@@ -37,7 +52,7 @@ export const Filters = ({ allRestaurants }) => {
         <div className="container">
           <p>Genre</p>
           <div className="select">
-            <select>
+            <select onChange={(e) => filterByGenre(e)}>
               <option>All</option>
               {renderGenres(allRestaurants)}
             </select>
