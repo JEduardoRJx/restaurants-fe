@@ -4,6 +4,7 @@ import { getRestaurants } from './apiCalls';
 import { TableSection }  from './TableSection';
 import { restaurants } from './restaurants';
 import { Search } from './Search';
+import { Filters } from './Filters';
 
 
 
@@ -23,6 +24,7 @@ export const App = () => {
       <main className="container is-widescreen">
         {console.log(filteredRestaurants)}
         <Search restaurants={allRestaurants} setFilteredRestaurants={setFilteredRestaurants} />
+        <Filters />
         <TableSection restaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/>
       </main>
     )
