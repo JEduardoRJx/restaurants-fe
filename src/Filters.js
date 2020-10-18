@@ -8,6 +8,12 @@ export const Filters = ({ allRestaurants }) => {
     return uniqueStates.map(state => <option key={state} value={state}>{state}</option> )
   }
 
+  const renderGenres = (allRestaurants) => {
+    const allGenres = allRestaurants.map(rest => rest.genre.split(',')).flat();
+    const uniqueGenres = [...new Set(allGenres)];
+    return uniqueGenres.map(genre => <option key={genre} value={genre}>{genre}</option> )
+  }
+
   return (
     <section className="section has-background-success">
       <p>Filters</p>
