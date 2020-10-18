@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Search = ({ restaurants }) => {
+export const Search = ({ restaurants, setFilteredRestaurants }) => {
   const [searchText, setSearchText] = useState('');
 
   const handleSearchText = e => {
@@ -26,6 +26,7 @@ export const Search = ({ restaurants }) => {
     // Here is where you iterate to finde the restaruants that match the name
     // then send that array back to app
     // then you set it to state
+    setFilteredRestaurants(filteredRestaurants);
   }
 
   return (
