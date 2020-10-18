@@ -76,7 +76,7 @@ export const restaurants = [
     state: "FL",
     tags: "Social,Food and Dining,Restaurants,Seafood,Social,Food and Dining,Restaurants,American",
     telephone: "(407) 248-8606",
-    website: "http://www.bostonlobsterfeast.com",​​
+    website: "http://www.bostonlobsterfeast.com",
     zip: "32819"
   }
 ]
