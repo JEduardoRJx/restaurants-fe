@@ -26,7 +26,7 @@ export const Filters = ({ allRestaurants }) => {
   const filterByGenre = (e) => {
     console.log(e.target.value);
     const genre = e.target.value;
-    const filteredRestaurantsByState = allRestaurants.filter(rest => rest.genre.includes(genre))
+    const filteredRestaurantsByGenre = allRestaurants.filter(rest => rest.genre.includes(genre))
     console.log(filteredRestaurantsByState);
   }
 
