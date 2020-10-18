@@ -20,6 +20,7 @@ export const App = () => {
     return (
       <main className="container is-widescreen">
         {/* {console.log(allRestaurants)} */}
+        <Search />
         <TableSection restaurants={allRestaurants} />
       </main>
     )
