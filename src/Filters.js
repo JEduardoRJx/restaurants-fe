@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 export const Filters = ({ allRestaurants }) => {
+  const [state, setState] = useState('');
 
   const renderStates = (allRestaurants) => {
     const allStates = allRestaurants.map(rest => rest.state);
@@ -12,6 +13,10 @@ export const Filters = ({ allRestaurants }) => {
     const allGenres = allRestaurants.map(rest => rest.genre.split(',')).flat();
     const uniqueGenres = [...new Set(allGenres)];
     return uniqueGenres.map(genre => <option key={genre} value={genre}>{genre}</option> )
+  }
+
+  const filterByState = () => {
+
   }
 
   return (
