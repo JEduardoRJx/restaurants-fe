@@ -1,15 +1,16 @@
 import React from 'react';
 
-export const TableItem= () => {
+export const TableItem = ({ rest }) => {
+  // console.log('props', rest)
   
   return (
     <div className="card">
       <header className="card-header is-block-touch">
         {/* <p className="card-header-title is-size-7-mobile">{item.name}{item.city}, {item.state} {item.telephone}</p> */}
-        <p className="card-header-title is-size-5-touch">{item.name}</p>
-        <p className="card-header-title is-size-6-mobile py-0">{item.city}, {item.state}</p>
-        <p className="card-header-title is-size-6-mobile py-0">{item.telephone}</p>
-        <p className="card-header-title is-size-6-mobile py-0">{item.genre}</p>
+        <p className="card-header-title is-size-5-touch">{rest.name}</p>
+        <p className="card-header-title is-size-6-mobile py-0">{rest.city}, {rest.state}</p>
+        <p className="card-header-title is-size-6-mobile py-0">{rest.telephone}</p>
+        <p className="card-header-title is-size-6-mobile py-0">{rest.genre}</p>
         {/* <p className="card-header-title">{item.name} | {item.city}, {item.state} | {item.telephone}</p> */}
 
         <a href="#" className="card-header-icon" aria-label="more options">
