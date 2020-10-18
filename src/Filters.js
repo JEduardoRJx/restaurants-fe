@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
 export const Filters = ({ allRestaurants }) => {
-  const [state, setState] = useState('');
+  // const [state, setState] = useState('');
+  // const [genre, setGenre]
+  // const [restaurantByStateGenre, setRestaurats]
+  const [allRestaurantsByState, setRestaurantsByState] = useState([]);
+  const [allRestaurantsByGenre, setRestaurantsByGenre] = useState([])
 
   const renderStates = (allRestaurants) => {
     const allStates = allRestaurants.map(rest => rest.state);
@@ -16,28 +20,31 @@ export const Filters = ({ allRestaurants }) => {
   }
 
   const filterByState = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     const state = e.target.value;
     const filteredRestaurantsByState = allRestaurants.filter(rest => rest.state === state)
-    console.log(filteredRestaurantsByState);
-
+    setRestaurantsByState(filteredRestaurantsByState )
+    combineFilters();
   }
 
   const filterByGenre = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     const genre = e.target.value;
     const filteredRestaurantsByGenre = allRestaurants.filter(rest => rest.genre.includes(genre))
-    console.log(filteredRestaurantsByState);
+    setRestaurantsByGenre(filteredRestaurantsByGenre);
+    combineFilters();
   }
 
   const combineFilters = () => {
-
+    const allRestaurantsByFilters = [...allRestaurantsByState, ...allRestaurantsByGenre];
+    const uniqueRestaurantsByFilters = [...new Set(allRestaurantsByFilters )];
+    console.log(uniqueRestaurantsByFilters)
   }
 
   return (
     <section className="section has-background-success">
       <p>Filters</p>
-
+      {/* {console.log(allRestaurantsByFilters)} */}
       <div className="container is-flex">
         <div className="container">
           <p>State</p>
