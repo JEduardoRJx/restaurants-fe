@@ -12,8 +12,10 @@ export const Search = ({ restaurants, setFilteredRestaurants }) => {
   // then you send the filtered restuarnts back up into app
   // You set them to state there
 
-  const handleSearchClick = () => {
-    searchRestaurants(searchText)
+  const handleSearchClick = (e) => {
+    if (e.key === 'Enter' || e.target.type === 'submit') {
+      searchRestaurants(searchText)
+    }
   }
 
   const searchRestaurants = (text) => {
@@ -32,9 +34,10 @@ export const Search = ({ restaurants, setFilteredRestaurants }) => {
   return (
     <section className="section has-background-link is-flex">
       <input className="input" type="text" placeholder="Search"
-        onChange={e => handleSearchText(e)} />
+        onChange={e => handleSearchText(e)} 
+        onKeyPress={(e) => handleSearchClick(e)} />
       <button className="button is-danger"
-        onClick={() => handleSearchClick()}>Search</button>
+        onClick={(e) => handleSearchClick(e)}>Search</button>
       <p>{searchText}</p>
     </section>
   )
