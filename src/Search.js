@@ -12,7 +12,7 @@ export const Search = ({ restaurants, setFilteredRestaurants }) => {
   // then you send the filtered restuarnts back up into app
   // You set them to state there
 
-  const handleSearchClick = e => {
+  const handleSearchClick = () => {
     searchRestaurants(searchText)
   }
 
@@ -34,7 +34,7 @@ export const Search = ({ restaurants, setFilteredRestaurants }) => {
       <input className="input" type="text" placeholder="Search"
         onChange={e => handleSearchText(e)} />
       <button className="button is-danger"
-        onClick={(e) => handleSearchClick(e)}>Search</button>
+        onClick={() => handleSearchClick()}>Search</button>
       <p>{searchText}</p>
     </section>
   )
