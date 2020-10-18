@@ -30,7 +30,7 @@ export const restaurants = [
     telephone: "(518) 427-7463",
     website: "http://www.677prime.com",
     zip: "12207"
-  ​​},
+  },
   {
     address1: "1100 N Tuttle Ave",
     attire: "casual",
@@ -46,7 +46,7 @@ export const restaurants = [
     telephone: "(941) 331-1400",
     website: "http://www.antoinessarasota.com",
     zip: "34237"
-  ​​},
+  },
   {
     address1: "1200 Dobbins Rd",
     attire: "business casual",
@@ -62,8 +62,8 @@ export const restaurants = [
     telephone: "(828) 898-5395",
     website: "http://www.artisanalnc.com",
     zip: "28604"
-  ​​},
-  {​​
+  },
+  {
     address1: "8731 International Dr",
     attire: "Casual",
     city: "Orlando",
