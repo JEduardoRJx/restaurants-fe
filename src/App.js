@@ -23,7 +23,7 @@ export const App = () => {
       <main className="container is-widescreen">
         {console.log(filteredRestaurants)}
         <Search restaurants={allRestaurants} setFilteredRestaurants={setFilteredRestaurants} />
-        <TableSection restaurants={allRestaurants} />
+        <TableSection restaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/>
       </main>
     )
 }
