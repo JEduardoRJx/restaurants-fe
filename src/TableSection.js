@@ -9,10 +9,7 @@ export const TableSection = ({ restaurants, filteredRestaurants }) => {
     } else {
       return restaurants.map(rest => <TableItem key={rest.id} rest={rest} />)
     }
-
   }
-  
-  
 
   return (
     <section className="section has-background-primary">
