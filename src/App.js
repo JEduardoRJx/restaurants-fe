@@ -7,10 +7,10 @@ import { TableSection }  from './TableSection'
 export const App = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
 
-  // useEffect( () => {
-  //   getRestaurants()
-  //     .then(data => setAllRestaurants(data))
-  // }, []);
+  useEffect( () => {
+    getRestaurants()
+      .then(data => setAllRestaurants(data))
+  }, []);
 
     return (
       <main className="container is-widescreen">
