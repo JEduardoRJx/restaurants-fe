@@ -19,26 +19,19 @@ export const App = () => {
   //   getRestaurants()
   //     .then(data => setAllRestaurants(data))
     setAllRestaurants(restaurants)
-
   }, []);
 
   useEffect(() => {
+    console.log('searchtext', searchText);
     const restaurants = allRestaurants.filter(rest => rest.genre.includes(genre) &&
       (rest.state === state || state === ''))
       console.log('rest', restaurants)
-      setFilteredRestaurants(restaurants);
-  }, [state, genre]);
-
-   const handleSearch = (e) => {
-    if (e.key === 'Enter' || e.target.type === 'submit') {
-      searchRestaurants(searchText)
-    }
-  }
-
+      // setFilteredRestaurants(restaurants);
+  }, [state, genre, searchText]);
 
     return (
       <main className="container is-widescreen">
-        <Search setSearchText={setSearchText} handleSearch={handleSearch} />
+        <Search setSearchText={setSearchText} />
         <Filters allRestaurants={allRestaurants} setState={setState} setGenre={setGenre}/>
         <TableSection restaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/>
       </main>
