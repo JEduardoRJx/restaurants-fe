@@ -4,12 +4,15 @@ import { getRestaurants } from './apiCalls';
 import { TableSection }  from './TableSection';
 import { restaurants } from './restaurants';
 import { Search } from './Search';
+import { Filters } from './Filters';
 
 
 
 export const App = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
+  const [state, setState] = useState('')
+  const [genre, setGenre] = useState('')
 
   useEffect( () => {
   //   getRestaurants()
@@ -18,11 +21,18 @@ export const App = () => {
 
   }, []);
 
+  useEffect(() => {
+    const restaurants = allRestaurants.filter(rest => rest.genre.includes(genre) &&
+      (rest.state === state || state === ''))
+      console.log('rest', restaurants)
+      setFilteredRestaurants(restaurants);
+  }, [state, genre])
+
 
     return (
       <main className="container is-widescreen">
-        {console.log(filteredRestaurants)}
         <Search restaurants={allRestaurants} setFilteredRestaurants={setFilteredRestaurants} />
+        <Filters allRestaurants={allRestaurants} setState={setState} setGenre={setGenre}/>
         <TableSection restaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/>
       </main>
     )
