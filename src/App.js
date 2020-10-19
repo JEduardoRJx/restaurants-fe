@@ -30,19 +30,19 @@ export const App = () => {
   }, [state, genre, searchText, isLoading]);
 
   const searchRestaurants = () => {
-    // let restaurants = allRestaurants.filter(rest => {
-    //   const lowerCaseSearchText = searchText.toLowerCase();
-    //   const lowerCaseName = rest.name.toLowerCase();
-    //   const lowerCaseCity = rest.city.toLowerCase();
-    //   const lowerCaseGenre = rest.genre.toLowerCase();
+    let restaurants = allRestaurants.filter(rest => {
+      const lowerCaseSearchText = searchText.toLowerCase();
+      const lowerCaseName = rest.name.toLowerCase();
+      const lowerCaseCity = rest.city.toLowerCase();
+      const lowerCaseGenre = rest.genre.toLowerCase();
 
-    //   return rest.genre.includes(genre) && (rest.state === state || state === '') &&
-    //   (lowerCaseName.includes(lowerCaseSearchText) ||
-    //       lowerCaseCity.includes(lowerCaseSearchText) ||
-    //       lowerCaseGenre.includes(lowerCaseSearchText))
-    // })
+      return rest.genre.includes(genre) && (rest.state === state || state === '') &&
+      (lowerCaseName.includes(lowerCaseSearchText) ||
+          lowerCaseCity.includes(lowerCaseSearchText) ||
+          lowerCaseGenre.includes(lowerCaseSearchText))
+    })
 
-    // return restaurants
+    return restaurants
   }
 
     return (
