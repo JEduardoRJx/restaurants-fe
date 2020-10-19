@@ -11,6 +11,7 @@ import { Filters } from './Filters';
 export const App = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
+  const [searchText, setSearchText] = useState('');
   const [state, setState] = useState('')
   const [genre, setGenre] = useState('')
 

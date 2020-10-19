@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 export const Search = ({ restaurants, setFilteredRestaurants }) => {
-  const [searchText, setSearchText] = useState('');
 
   const handleSearchText = (e) => {
     setSearchText(e.target.value)
