@@ -49,7 +49,7 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
           <p>Genre</p>
           <div className="select">
             <select onChange={(e) => selectGenre(e)}>
-              <option value=git "All" defaultValue>All</option>
+              <option value="All" defaultValue>All</option>
               {renderGenres(allRestaurants)}
             </select>
           </div>
