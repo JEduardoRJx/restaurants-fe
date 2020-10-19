@@ -1,20 +1,20 @@
 import React from 'react';
 import { TableItem } from './TableItem';
 
-export const TableSection = ({ restaurants, filteredRestaurants }) => {
+export const TableSection = ({ filteredRestaurants }) => {
   
-  const renderRestaurants = (restaurants, filteredRestaurants) => {
+  const renderRestaurants = (filteredRestaurants) => {
     if (filteredRestaurants.length) {
       return filteredRestaurants.map(rest => <TableItem key={rest.id} rest={rest} />)
     } else {
-      return restaurants.map(rest => <TableItem key={rest.id} rest={rest} />)
+      return <p>No Restaurants Found</p>
     }
   }
 
   return (
     <section className="section has-background-primary">
       <h1 className="title">Section</h1>
-      {renderRestaurants(restaurants, filteredRestaurants)}
+      {renderRestaurants(filteredRestaurants)}
       
       {/* <h2 className="subtitle">
         A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
