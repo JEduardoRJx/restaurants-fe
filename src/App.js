@@ -29,16 +29,16 @@ export const App = () => {
       setFilteredRestaurants(restaurants);
   }, [state, genre]);
 
-   // const handleSearch = (e) => {
-  //   if (e.key === 'Enter' || e.target.type === 'submit') {
-  //     searchRestaurants(searchText)
-  //   }
-  // }
+   const handleSearch = (e) => {
+    if (e.key === 'Enter' || e.target.type === 'submit') {
+      searchRestaurants(searchText)
+    }
+  }
 
 
     return (
       <main className="container is-widescreen">
-        <Search restaurants={allRestaurants} setSearchText={setSearchText} />
+        <Search restaurants={allRestaurants} setSearchText={setSearchText} handleSearch={handleSearch} />
         <Filters allRestaurants={allRestaurants} setState={setState} setGenre={setGenre}/>
         <TableSection restaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/>
       </main>
