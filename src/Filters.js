@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 
-export const Filters = ({ allRestaurants }) => {
-  // const [state, setState] = useState('');
-  // const [genre, setGenre]
-  // const [restaurantByStateGenre, setRestaurats]
+export const Filters = ({ allRestaurants, setFilteredRestaurants}) => {
   const [allRestaurantsByState, setRestaurantsByState] = useState([]);
-  const [allRestaurantsByGenre, setRestaurantsByGenre] = useState([])
+  const [allRestaurantsByGenre, setRestaurantsByGenre] = useState([]);
 
   const renderStates = (allRestaurants) => {
     const allStates = allRestaurants.map(rest => rest.state);
@@ -20,7 +17,6 @@ export const Filters = ({ allRestaurants }) => {
   }
 
   const filterByState = (e) => {
-    // console.log(e.target.value);
     const state = e.target.value;
     const filteredRestaurantsByState = allRestaurants.filter(rest => rest.state === state)
     setRestaurantsByState(filteredRestaurantsByState )
@@ -28,7 +24,6 @@ export const Filters = ({ allRestaurants }) => {
   }
 
   const filterByGenre = (e) => {
-    // console.log(e.target.value);
     const genre = e.target.value;
     const filteredRestaurantsByGenre = allRestaurants.filter(rest => rest.genre.includes(genre))
     setRestaurantsByGenre(filteredRestaurantsByGenre);
@@ -38,7 +33,7 @@ export const Filters = ({ allRestaurants }) => {
   const combineFilters = () => {
     const allRestaurantsByFilters = [...allRestaurantsByState, ...allRestaurantsByGenre];
     const uniqueRestaurantsByFilters = [...new Set(allRestaurantsByFilters )];
-    console.log(uniqueRestaurantsByFilters)
+    setFilteredRestaurants(uniqueRestaurantsByFilters);
   }
 
   return (
