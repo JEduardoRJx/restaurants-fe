@@ -32,7 +32,7 @@ export const App = () => {
 
     return (
       <main className="container is-widescreen">
-        <Search restaurants={allRestaurants} setFilteredRestaurants={setFilteredRestaurants} />
+        <Search restaurants={allRestaurants} setSearchText={setSearchText} />
         <Filters allRestaurants={allRestaurants} setState={setState} setGenre={setGenre}/>
         <TableSection restaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/>
       </main>
