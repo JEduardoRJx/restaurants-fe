@@ -11,29 +11,45 @@ import { Filters } from './Filters';
 export const App = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
-  const [state, setState] = useState('')
-  const [genre, setGenre] = useState('')
+  const [searchText, setSearchText] = useState('');
+  const [state, setState] = useState('');
+  const [genre, setGenre] = useState('');
+  const [isLoading, setLoading] = useState(true)
 
   useEffect( () => {
   //   getRestaurants()
   //     .then(data => setAllRestaurants(data))
     setAllRestaurants(restaurants)
-
+    setFilteredRestaurants(restaurants)
+    setLoading(false)
   }, []);
 
   useEffect(() => {
-    const restaurants = allRestaurants.filter(rest => rest.genre.includes(genre) &&
-      (rest.state === state || state === ''))
-      console.log('rest', restaurants)
+      const restaurants = searchRestaurants();
       setFilteredRestaurants(restaurants);
-  }, [state, genre])
+  }, [state, genre, searchText, isLoading]);
 
+  const searchRestaurants = () => {
+    let restaurants = allRestaurants.filter(rest => {
+      const lowerCaseSearchText = searchText.toLowerCase();
+      const lowerCaseName = rest.name.toLowerCase();
+      const lowerCaseCity = rest.city.toLowerCase();
+      const lowerCaseGenre = rest.genre.toLowerCase();
+
+      return rest.genre.includes(genre) && (rest.state === state || state === '') &&
+      (lowerCaseName.includes(lowerCaseSearchText) ||
+          lowerCaseCity.includes(lowerCaseSearchText) ||
+          lowerCaseGenre.includes(lowerCaseSearchText))
+    })
+
+    return restaurants
+  }
 
     return (
       <main className="container is-widescreen">
-        <Search restaurants={allRestaurants} setFilteredRestaurants={setFilteredRestaurants} />
+        <Search setSearchText={setSearchText} />
         <Filters allRestaurants={allRestaurants} setState={setState} setGenre={setGenre}/>
-        <TableSection restaurants={allRestaurants} filteredRestaurants={filteredRestaurants}/>
+        <TableSection filteredRestaurants={filteredRestaurants} />
       </main>
     )
 }
