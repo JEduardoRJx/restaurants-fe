@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export const Filters = ({ allRestaurants, setFilteredRestaurants}) => {
-  const [allRestaurantsByState, setRestaurantsByState] = useState([]);
-  const [allRestaurantsByGenre, setRestaurantsByGenre] = useState([]);
+export const Filters = ({ allRestaurants, setState, setGenre}) => {
 
   const renderStates = (allRestaurants) => {
     const allStates = allRestaurants.map(rest => rest.state);
@@ -16,35 +14,31 @@ export const Filters = ({ allRestaurants, setFilteredRestaurants}) => {
     return uniqueGenres.map(genre => <option key={genre} value={genre}>{genre}</option> )
   }
 
-  const filterByState = (e) => {
+  const selectState = (e) => {
     const state = e.target.value;
-    const filteredRestaurantsByState = allRestaurants.filter(rest => rest.state === state)
-    setRestaurantsByState(filteredRestaurantsByState )
-    combineFilters();
+    if (state === 'All') {
+      setState('');
+    } else {
+      setState(state);
+    }
   }
 
-  const filterByGenre = (e) => {
+  const selectGenre = (e) => {
     const genre = e.target.value;
-    const filteredRestaurantsByGenre = allRestaurants.filter(rest => rest.genre.includes(genre))
-    setRestaurantsByGenre(filteredRestaurantsByGenre);
-    combineFilters();
+    if (genre === 'All') {
+      setGenre('');
+    } else {
+      setGenre(genre);
+    }
   }
-
-  const combineFilters = () => {
-    const allRestaurantsByFilters = [...allRestaurantsByState, ...allRestaurantsByGenre];
-    const uniqueRestaurantsByFilters = [...new Set(allRestaurantsByFilters )];
-    setFilteredRestaurants(uniqueRestaurantsByFilters);
-  }
-
   return (
     <section className="section has-background-success">
       <p>Filters</p>
-      {/* {console.log(allRestaurantsByFilters)} */}
       <div className="container is-flex">
         <div className="container">
           <p>State</p>
           <div className="select">
-            <select onChange={(e) => filterByState(e)}>
+            <select onChange={(e) => selectState(e)}>
               <option value="All" defaultValue>All</option>
               {renderStates(allRestaurants)}
             </select>
@@ -54,14 +48,13 @@ export const Filters = ({ allRestaurants, setFilteredRestaurants}) => {
         <div className="container">
           <p>Genre</p>
           <div className="select">
-            <select onChange={(e) => filterByGenre(e)}>
-              <option>All</option>
+            <select onChange={(e) => selectGenre(e)}>
+              <option value=git "All" defaultValue>All</option>
               {renderGenres(allRestaurants)}
             </select>
           </div>
         </div>
       </div>
-
     </section>
   )
 }
