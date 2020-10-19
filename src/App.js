@@ -27,7 +27,13 @@ export const App = () => {
       (rest.state === state || state === ''))
       console.log('rest', restaurants)
       setFilteredRestaurants(restaurants);
-  }, [state, genre])
+  }, [state, genre]);
+
+   // const handleSearch = (e) => {
+  //   if (e.key === 'Enter' || e.target.type === 'submit') {
+  //     searchRestaurants(searchText)
+  //   }
+  // }
 
 
     return (
