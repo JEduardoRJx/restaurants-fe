@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Search = ({ restaurants, setFilteredRestaurants, setSearchText }) => {
+export const Search = ({setSearchText, handleSearch }) => {
 
   const handleSearchText = (e) => {
     setSearchText(e.target.value)
