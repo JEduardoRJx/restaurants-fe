@@ -41,5 +41,5 @@ export const Search = ({ setSearchText }) => {
           onClick={(e) => handleSearch(e)}>Search</button>
       </div>
     </section>
-  )
+  );
 }
