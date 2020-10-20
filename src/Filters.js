@@ -33,10 +33,10 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
   }
   return (
     <section className="section has-background-success">
-      <p>Filters</p>
+      <h1 className="title">Filters</h1>
       <div className="container is-flex">
         <div className="container">
-          <p>State</p>
+          <p className="is-size-5-touch">State</p>
           <div className="select">
             <select onChange={(e) => selectState(e)}>
               <option value="All" defaultValue>All</option>
