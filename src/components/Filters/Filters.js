@@ -11,10 +11,10 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
       } else if (a > b) {
         return 1;
       } else {
-        return 0
+        return 0;
       }
-    })
-    return uniqueStates.map(state => <option key={state} value={state}>{state}</option> )
+    });
+    return uniqueStates.map(state => <option key={state} value={state}>{state}</option> );
   }
 
   const renderGenres = (allRestaurants) => {
@@ -26,10 +26,10 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
       } else if (a > b) {
         return 1;
       } else {
-        return 0
+        return 0;
       }
-    })
-    return uniqueGenres.map(genre => <option key={genre} value={genre}>{genre}</option> )
+    });
+    return uniqueGenres.map(genre => <option key={genre} value={genre}>{genre}</option> );
   }
 
   const selectState = (e) => {
@@ -49,6 +49,7 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
       setGenre(genre);
     }
   }
+  
   return (
     <section className="section has-background-success">
       <h1 className="title">Filters</h1>
@@ -62,7 +63,6 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
             </select>
           </div>
         </div>
-
         <div className="container">
           <p className="is-size-5-touch is-size-4">Genre</p>
           <div className="select">
@@ -74,5 +74,5 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
         </div>
       </div>
     </section>
-  )
+  );
 }
