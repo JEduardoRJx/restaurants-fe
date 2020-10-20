@@ -15,10 +15,6 @@ export const TableSection = ({ filteredRestaurants }) => {
     <section className="section has-background-primary">
       <h1 className="title has-text-white">Restaurants:</h1>
       {renderRestaurants(filteredRestaurants)}
-      
-      {/* <h2 className="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
-      </h2> */}
     </section>
   )
 }
