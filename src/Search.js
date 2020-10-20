@@ -19,7 +19,7 @@ export const Search = ({ setSearchText }) => {
   }
 
   return (
-    <section className="section has-background-link is-flex">
+    <section className="section is-flex">
       <div className="field has-addons">
         <div className="control">
           <input className="input" type="text" placeholder="Search"
