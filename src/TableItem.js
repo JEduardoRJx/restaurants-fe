@@ -1,7 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const TableItem = ({ rest }) => {
-  // console.log('props', rest)
+  const [renderInfo, setRenderInfo] = useState(false)
+
+  const toggleRenderInfo = (rest) => {
+    console.log('rest', rest);
+    setRenderInfo(!renderInfo);
+  }
+
+  // const renderMoreInfo = () => {
+  //   return (
+  //     <>
+  //     <div className="card-content">
+  //       <div className="content">
+  //         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+  //         <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+  //         <br />
+  //         <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+  //       </div>
+  //     </div>
+
+  //     <footer className="card-footer">
+  //       <a href="#" className="card-footer-item"
+  //         onClick={() => toggleRenderInfo()}>Close</a>
+  //     </footer>
+  //     </>
+  //   )
+  // }
+
+  // const renderArrowIcon = () => {
+  //   if (renderInfo) {
+  //     return (
+  //       <span className="icon">
+  //         <i className="fas fa-angle-up" aria-hidden="true"></i>
+  //       </span>
+  //     )
+  //   } else {
+  //     return (
+  //       <span className="icon">
+  //         <i className="fas fa-angle-down" aria-hidden="true"></i>
+  //       </span>
+  //     )
+  //   }
+  // }
   
   return (
     <div className="card mt-4">
@@ -11,13 +52,15 @@ export const TableItem = ({ rest }) => {
         <p className="card-header-title is-size-6-mobile py-0">{rest.telephone}</p>
         <p className="card-header-title is-size-6-mobile py-0">{rest.genre}</p>
 
-        <a href="#" className="card-header-icon" aria-label="more options">
-          <span className="icon">
+        <a className="card-header-icon" aria-label="more options"
+          onClick={() => toggleRenderInfo()}>
+          {/* <span className="icon">
             <i className="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
+          </span> */}
+          {renderArrowIcon()}
         </a>
       </header>
-
+      {/* {renderInfo && renderMoreInfo()} */}
       {/* <div className="card-content">
         <div className="content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
