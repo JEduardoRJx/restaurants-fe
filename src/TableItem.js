@@ -8,7 +8,6 @@ export const TableItem = ({ rest }) => {
   }
   
   const renderMoreInfo = (rest) => {
-    console.log('rest', rest);
     return (
       <>
       <div className="card-content">
