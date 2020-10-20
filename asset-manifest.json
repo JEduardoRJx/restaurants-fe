@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/.github.io/restaurants-fe/static/css/main.52dfaec0.chunk.css",
-    "main.js": "/.github.io/restaurants-fe/static/js/main.3318e5d9.chunk.js",
-    "main.js.map": "/.github.io/restaurants-fe/static/js/main.3318e5d9.chunk.js.map",
-    "runtime-main.js": "/.github.io/restaurants-fe/static/js/runtime-main.7368a536.js",
-    "runtime-main.js.map": "/.github.io/restaurants-fe/static/js/runtime-main.7368a536.js.map",
-    "static/js/2.f76e2c88.chunk.js": "/.github.io/restaurants-fe/static/js/2.f76e2c88.chunk.js",
-    "static/js/2.f76e2c88.chunk.js.map": "/.github.io/restaurants-fe/static/js/2.f76e2c88.chunk.js.map",
-    "index.html": "/.github.io/restaurants-fe/index.html",
-    "precache-manifest.806685a8ab28869dbc9adf5d4dec65b3.js": "/.github.io/restaurants-fe/precache-manifest.806685a8ab28869dbc9adf5d4dec65b3.js",
-    "service-worker.js": "/.github.io/restaurants-fe/service-worker.js",
-    "static/css/main.52dfaec0.chunk.css.map": "/.github.io/restaurants-fe/static/css/main.52dfaec0.chunk.css.map",
-    "static/js/2.f76e2c88.chunk.js.LICENSE.txt": "/.github.io/restaurants-fe/static/js/2.f76e2c88.chunk.js.LICENSE.txt"
+    "main.css": "/restaurants-fe/static/css/main.52dfaec0.chunk.css",
+    "main.js": "/restaurants-fe/static/js/main.f8b55358.chunk.js",
+    "main.js.map": "/restaurants-fe/static/js/main.f8b55358.chunk.js.map",
+    "runtime-main.js": "/restaurants-fe/static/js/runtime-main.dee60b04.js",
+    "runtime-main.js.map": "/restaurants-fe/static/js/runtime-main.dee60b04.js.map",
+    "static/js/2.f76e2c88.chunk.js": "/restaurants-fe/static/js/2.f76e2c88.chunk.js",
+    "static/js/2.f76e2c88.chunk.js.map": "/restaurants-fe/static/js/2.f76e2c88.chunk.js.map",
+    "index.html": "/restaurants-fe/index.html",
+    "precache-manifest.89566dc1eed26163aa184a2f40b62050.js": "/restaurants-fe/precache-manifest.89566dc1eed26163aa184a2f40b62050.js",
+    "service-worker.js": "/restaurants-fe/service-worker.js",
+    "static/css/main.52dfaec0.chunk.css.map": "/restaurants-fe/static/css/main.52dfaec0.chunk.css.map",
+    "static/js/2.f76e2c88.chunk.js.LICENSE.txt": "/restaurants-fe/static/js/2.f76e2c88.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7368a536.js",
+    "static/js/runtime-main.dee60b04.js",
     "static/js/2.f76e2c88.chunk.js",
     "static/css/main.52dfaec0.chunk.css",
-    "static/js/main.3318e5d9.chunk.js"
+    "static/js/main.f8b55358.chunk.js"
   ]
 }
