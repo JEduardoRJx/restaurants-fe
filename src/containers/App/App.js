@@ -4,9 +4,6 @@ import { getRestaurants } from '../../apiCalls';
 import { Search } from '../../components/Search/Search';
 import { Filters } from '../../components/Filters/Filters';
 import { TableSection }  from '../TableSection/TableSection';
-import { restaurants } from '../../restaurants';
-
-
 
 export const App = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -17,13 +14,11 @@ export const App = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect( () => {
-  //   getRestaurants()
-  //     .then(data => {
-  //   setAllRestaurants(data)
-  //   setFilteredRestaurants(data)
-  // })
-    setAllRestaurants(restaurants);
-    setFilteredRestaurants(restaurants);
+    getRestaurants()
+      .then(data => {
+    setAllRestaurants(data)
+    setFilteredRestaurants(data)
+  })
     setLoading(false)
   }, []);
 
