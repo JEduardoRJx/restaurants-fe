@@ -4,7 +4,16 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
 
   const renderStates = (allRestaurants) => {
     const allStates = allRestaurants.map(rest => rest.state);
-    const uniqueStates = [...new Set(allStates)];
+    let uniqueStates = [...new Set(allStates)];
+    uniqueStates = uniqueStates.sort((a, b) => {
+      if (a < b) {
+        return -1;
+      } else if (a > b) {
+        return 1;
+      } else {
+        return 0
+      }
+    })
     return uniqueStates.map(state => <option key={state} value={state}>{state}</option> )
   }
 
