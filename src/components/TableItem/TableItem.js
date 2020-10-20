@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const TableItem = ({ rest }) => {
-  const [renderInfo, setRenderInfo] = useState(false)
+  const [renderInfo, setRenderInfo] = useState(false);
 
   const toggleRenderInfo = () => {
     setRenderInfo(!renderInfo);
@@ -18,13 +18,12 @@ export const TableItem = ({ rest }) => {
           <p className="is-italic">Attire: {rest.attire}</p>
         </div>
       </div>
-
       <footer className="card-footer">
         <a href="#" className="card-footer-item"
           onClick={() => toggleRenderInfo()}>Close</a>
       </footer>
       </>
-    )
+    );
   }
 
   const renderArrowIcon = () => {
@@ -33,13 +32,13 @@ export const TableItem = ({ rest }) => {
         <span className="icon">
           <i className="fas fa-angle-up" aria-hidden="true"></i>
         </span>
-      )
+      );
     } else {
       return (
         <span className="icon">
           <i className="fas fa-angle-down" aria-hidden="true"></i>
         </span>
-      )
+      );
     }
   }
   
@@ -50,7 +49,6 @@ export const TableItem = ({ rest }) => {
         <p className="card-header-title is-size-6-mobile py-0">{rest.city}, {rest.state}</p>
         <p className="card-header-title is-size-6-mobile py-0">{rest.telephone}</p>
         <p className="card-header-title is-size-6-mobile py-0">{rest.genre}</p>
-
         <a className="card-header-icon" aria-label="more options"
           onClick={() => toggleRenderInfo()}>
           {renderArrowIcon()}
@@ -58,5 +56,5 @@ export const TableItem = ({ rest }) => {
       </header>
       {renderInfo && renderMoreInfo(rest)}
     </div>
-  )
+  );
 }
