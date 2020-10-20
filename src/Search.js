@@ -4,13 +4,12 @@ export const Search = ({ setSearchText }) => {
   const [text, setText] = useState('');
 
   const handleText = (e) => {
-    setText(e.target.value)
+    setText(e.target.value);
   }
 
   const handleSearch = (e) => {
-    console.log('text', text)
     if (e.key === 'Enter' || e.target.type === 'submit') {
-      setSearchText(text)
+      setSearchText(text);
     }
   }
 
@@ -27,7 +26,6 @@ export const Search = ({ setSearchText }) => {
             onChange={e => handleText(e)} 
             onKeyPress={(e) => handleSearch(e)} />
         </div>
-
         <div className="control">
           <button className="button is-danger">
             <span className="icon is-small is-right"
@@ -37,7 +35,6 @@ export const Search = ({ setSearchText }) => {
           </button>
         </div>
       </div>
-
       <div className="field is-grouped">
         <p className="control is-expanded"></p>
         <button className="button is-danger"
