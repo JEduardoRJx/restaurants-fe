@@ -1,10 +1,10 @@
 import React, { useState , useEffect} from 'react';
 import './App.scss';
-import { getRestaurants } from './apiCalls';
-import { TableSection }  from './TableSection';
-import { restaurants } from './restaurants';
-import { Search } from './Search';
-import { Filters } from './Filters';
+import { getRestaurants } from '..apiCalls/apiCalls';
+import { TableSection }  from '../TableSection';
+import { restaurants } from '../restaurants';
+import { Search } from '../Search/Search';
+import { Filters } from '../Filters';
 
 
 
@@ -18,7 +18,11 @@ export const App = () => {
 
   useEffect( () => {
   //   getRestaurants()
-  //     .then(data => setAllRestaurants(data))
+  //     .then(data => {
+  //   setAllRestaurants(data)
+  //   setFilteredRestaurants(data)
+  // })
+  
     setAllRestaurants(restaurants)
     setFilteredRestaurants(restaurants)
     setLoading(false)
