@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableItem } from './TableItem';
+import { TableItem } from '../../components/TableItem/TableItem';
 
 export const TableSection = ({ filteredRestaurants }) => {
   
