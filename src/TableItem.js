@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 export const TableItem = ({ rest }) => {
   const [renderInfo, setRenderInfo] = useState(false)
 
-  const toggleRenderInfo = (rest) => {
-    console.log('rest', rest);
+  const toggleRenderInfo = () => {
     setRenderInfo(!renderInfo);
   }
-
-  const renderMoreInfo = () => {
+  
+  const renderMoreInfo = (rest) => {
+    console.log('rest', rest);
     return (
       <>
       <div className="card-content">
@@ -57,7 +57,7 @@ export const TableItem = ({ rest }) => {
           {renderArrowIcon()}
         </a>
       </header>
-      {renderInfo && renderMoreInfo()}
+      {renderInfo && renderMoreInfo(rest)}
     </div>
   )
 }
