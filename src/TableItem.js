@@ -4,7 +4,7 @@ export const TableItem = ({ rest }) => {
   // console.log('props', rest)
   
   return (
-    <div className="card">
+    <div className="card mt-4">
       <header className="card-header is-block-touch">
         <p className="card-header-title is-size-5-touch">{rest.name}</p>
         <p className="card-header-title is-size-6-mobile py-0">{rest.city}, {rest.state}</p>
