@@ -54,13 +54,10 @@ export const TableItem = ({ rest }) => {
 
         <a className="card-header-icon" aria-label="more options"
           onClick={() => toggleRenderInfo()}>
-          {/* <span className="icon">
-            <i className="fas fa-angle-down" aria-hidden="true"></i>
-          </span> */}
           {renderArrowIcon()}
         </a>
       </header>
-      {/* {renderInfo && renderMoreInfo()} */}
+      {renderInfo && renderMoreInfo()}
       {/* <div className="card-content">
         <div className="content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
