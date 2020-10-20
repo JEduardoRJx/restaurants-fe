@@ -3,7 +3,7 @@ import './App.scss';
 import { getRestaurants } from '../../apiCalls';
 import { TableSection }  from '../TableSection/TableSection';
 import { restaurants } from '../../restaurants';
-import { Search } from '../Search/Search';
+import { Search } from '../../components/Search/Search';
 import { Filters } from '../Filters';
 
 
