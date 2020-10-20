@@ -13,10 +13,10 @@ export const TableItem = ({ rest }) => {
       <>
       <div className="card-content">
         <div className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-          <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-          <br />
-          <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          <p>{rest.hours}</p>
+          <p>{rest.address1} <br/>{rest.city}, {rest.state} {rest.zip}</p>
+          <a href={rest.website} target="_blank" rel="noopener noreferrer">{rest.website}</a>
+          <p className="is-italic">Attire: {rest.attire}</p>
         </div>
       </div>
 
