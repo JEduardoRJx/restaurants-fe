@@ -15,17 +15,9 @@ export const Search = ({ setSearchText }) => {
   }
 
   const handleClear = () => {
-    console.log('yes')
+    setSearchText('');
+    document.querySelector('.input').value = '';
   }
-
-  // const searchRestaurants = (text) => {
-  //   const lowerCaseText = text.toLowerCase();
-  //   const filteredRestaurants = restaurants.filter(rest => {
-  //     const lowerCaseName = rest.name.toLowerCase();
-  //     return lowerCaseName.includes(lowerCaseText)
-  //   })
-  //         setFilteredRestaurants(filteredRestaurants);
-  // }
 
   return (
     <section className="section has-background-link is-flex">
