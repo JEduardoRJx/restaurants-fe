@@ -14,6 +14,10 @@ export const Search = ({ setSearchText }) => {
     }
   }
 
+  const handleClear = () => {
+    console.log('yes')
+  }
+
   // const searchRestaurants = (text) => {
   //   const lowerCaseText = text.toLowerCase();
   //   const filteredRestaurants = restaurants.filter(rest => {
@@ -25,17 +29,28 @@ export const Search = ({ setSearchText }) => {
 
   return (
     <section className="section has-background-link is-flex">
-        <div class="control has-icons-right">
-          <input class="input" type="text" placeholder="Search" 
-          onChange={e => handleText(e)} 
-          onKeyPress={(e) => handleSearch(e)} />
-          <span class="icon is-small is-right">
-            <i class="fas fa-times"></i>
-          </span>
+      <div className="field has-addons">
+        <div className="control">
+          <input className="input" type="text" placeholder="Search"
+            onChange={e => handleText(e)} 
+            onKeyPress={(e) => handleSearch(e)} />
         </div>
+
+        <div className="control">
+          <button className="button is-danger">
+            <span className="icon is-small is-right"
+              onClick={() => handleClear()}>
+                <i className="fas fa-times"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div className="field is-grouped">
+        <p className="control is-expanded"></p>
         <button className="button is-danger"
-        onClick={(e) => handleSearch(e)}
-        >Search</button>
+          onClick={(e) => handleSearch(e)}>Search</button>
+      </div>
     </section>
   )
 }
