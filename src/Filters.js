@@ -19,7 +19,16 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
 
   const renderGenres = (allRestaurants) => {
     const allGenres = allRestaurants.map(rest => rest.genre.split(',')).flat();
-    const uniqueGenres = [...new Set(allGenres)];
+    let uniqueGenres = [...new Set(allGenres)];
+    uniqueGenres = uniqueGenres.sort((a, b) => {
+      if (a < b) {
+        return -1;
+      } else if (a > b) {
+        return 1;
+      } else {
+        return 0
+      }
+    })
     return uniqueGenres.map(genre => <option key={genre} value={genre}>{genre}</option> )
   }
 
