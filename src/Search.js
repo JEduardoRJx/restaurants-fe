@@ -25,12 +25,14 @@ export const Search = ({ setSearchText }) => {
 
   return (
     <section className="section has-background-link is-flex">
-      <input className="input" type="text" placeholder="Search"
-        onChange={e => handleText (e)} 
-        onKeyPress={(e) => handleSearch(e)} 
-        />
-      <button className="button is-danger"
-        onClick={(e) => handleSearch(e)}
+        <div class="control has-icons-right">
+          <input class="input" type="text" placeholder="Search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <button className="button is-danger"
+          onClick={(e) => handleSearch(e)}
         >Search</button>
     </section>
   )
