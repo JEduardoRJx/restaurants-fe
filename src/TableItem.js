@@ -28,21 +28,21 @@ export const TableItem = ({ rest }) => {
     )
   }
 
-  // const renderArrowIcon = () => {
-  //   if (renderInfo) {
-  //     return (
-  //       <span className="icon">
-  //         <i className="fas fa-angle-up" aria-hidden="true"></i>
-  //       </span>
-  //     )
-  //   } else {
-  //     return (
-  //       <span className="icon">
-  //         <i className="fas fa-angle-down" aria-hidden="true"></i>
-  //       </span>
-  //     )
-  //   }
-  // }
+  const renderArrowIcon = () => {
+    if (renderInfo) {
+      return (
+        <span className="icon">
+          <i className="fas fa-angle-up" aria-hidden="true"></i>
+        </span>
+      )
+    } else {
+      return (
+        <span className="icon">
+          <i className="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      )
+    }
+  }
   
   return (
     <div className="card mt-4">
