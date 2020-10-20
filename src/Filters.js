@@ -36,7 +36,7 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
       <h1 className="title">Filters</h1>
       <div className="container is-flex">
         <div className="container">
-          <p className="is-size-5-touch">State</p>
+          <p className="is-size-5-touch is-size-4">State</p>
           <div className="select">
             <select onChange={(e) => selectState(e)}>
               <option value="All" defaultValue>All</option>
@@ -46,7 +46,7 @@ export const Filters = ({ allRestaurants, setState, setGenre}) => {
         </div>
 
         <div className="container">
-          <p>Genre</p>
+          <p className="is-size-5-touch is-size-4">Genre</p>
           <div className="select">
             <select onChange={(e) => selectGenre(e)}>
               <option value="All" defaultValue>All</option>
