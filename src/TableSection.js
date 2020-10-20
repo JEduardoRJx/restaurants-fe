@@ -13,7 +13,7 @@ export const TableSection = ({ filteredRestaurants }) => {
 
   return (
     <section className="section has-background-primary">
-      <h1 className="title has-text-white">Section</h1>
+      <h1 className="title has-text-white">Restaurants:</h1>
       {renderRestaurants(filteredRestaurants)}
       
       {/* <h2 className="subtitle">
